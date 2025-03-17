@@ -1,12 +1,17 @@
+import { useState } from "react";
 import { HeaderMenuItem } from "./HeaderMenuItem"
 
 
 export const Header = () => {
-    //let currentPage = "";
+
+           // Home        // Function    
+
+
   return (
     <div>
-        <HeaderMenuItem text="Home" />
+        <HeaderMenuItem text="Home"  /> 
         <HeaderMenuItem text="About" />
+        <HeaderMenuItem text="Contact"  />
         Header</div>
 
   )

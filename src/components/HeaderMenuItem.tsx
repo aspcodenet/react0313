@@ -1,18 +1,17 @@
-import { useState } from "react";
+import { useContext } from "react"
+import { SelectedItemContext } from "./SelectedItemContext"
 
 
-export const HeaderMenuItem = ({text}) => {
+export const HeaderMenuItem = (props) => {
+  const {selectedItem,setSelectedItem} = useContext(SelectedItemContext);
     //let css:string  = "";
-    const [css,setCss] = useState('');
+//    const [css,setCss] = useState('');
     //const [age,setAge] = useState(0);
 
   return (
     <div>
-        <button className={css} onClick={()=>{
-            //css='selected';
-            setCss('selected');
-            console.log('clicked' + css);
-            }}>{text}</button>
+        <button className={selectedItem === props.text ? 'selected' : '' } onClick={()=>setSelectedItem(props.text)}>
+          {props.text}</button>
         
     </div>
   )
